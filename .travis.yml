@@ -3,14 +3,26 @@ language: go
 # use containers which run faster and have cache
 sudo: false
 
+cache:
+  directories:
+    $GOPATH/src
+
 go:
   - tip
   - 1.7.x
 
 go_import_path: github.com/adamryman/kit
 
+before_install:
+  - go get github.com/alecthomas/gometalinter
+  - gometalinter -i -d
+
+install:
+  - go get -u -v -t github.com/adamryman/kit/...
+
 script:
   - go build -v github.com/adamryman/kit/...
+  - gometalinter --enable-all -d $GOPATH/src/github.com/adamryman/kit/...
 
 notifications:
   email: false
