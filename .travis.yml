@@ -1,0 +1,16 @@
+language: go
+
+# use containers which run faster and have cache
+sudo: false
+
+go:
+  - tip
+  - 1.7.x
+
+go_import_path: github.com/adamryman/kit
+
+script:
+  - go build -v github.com/adamryman/kit/...
+
+notifications:
+  email: false
