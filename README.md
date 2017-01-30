@@ -27,4 +27,4 @@ go get -d github.com/adamryman/kit
 
 ## (UN)-LICENCE
 
-All software is released into the public domain. See [`LICENCE.md`](./LICENCE.md)
+All software is released into the public domain. See [`LICENSE.md`](./LICENSE.md)
