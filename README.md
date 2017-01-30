@@ -1,4 +1,4 @@
-# kit
+# kit [![Build Status](https://travis-ci.org/adamryman/kit.svg?branch=master)](https://travis-ci.org/adamryman/kit)
 
 A group of small go libraries, each of them ready for you to do a little
 copying, [as is the go way.](https://www.youtube.com/watch?v=PAAkCSZUG1c&feature=youtu.be&t=569)
