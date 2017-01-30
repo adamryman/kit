@@ -3,6 +3,11 @@ language: go
 # use containers which run faster and have cache
 sudo: false
 
+addons:
+  apt:
+    packages:
+      - jq
+
 cache:
   directories:
     $GOPATH/src
@@ -14,15 +19,13 @@ go:
 go_import_path: github.com/adamryman/kit
 
 before_install:
+  - jq --version
   - go get github.com/alecthomas/gometalinter
   - gometalinter -i -d
 
-install:
-  - go get -u -v -t github.com/adamryman/kit/...
-
 script:
   - go build -v github.com/adamryman/kit/...
-  - gometalinter --enable-all -d $GOPATH/src/github.com/adamryman/kit/...
+  - gometalinter --enable-all --json $GOPATH/src/github.com/adamryman/kit/... | jq -C .
 
 notifications:
   email: false
