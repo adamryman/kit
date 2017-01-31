@@ -18,7 +18,7 @@ type Config struct {
 	Port     string
 }
 
-// FromENV creates a config from enviroment variables
+// FromENV creates a config from environment variables
 // the prefix will be Joined with underscores to the env variables
 func FromENV(prefixs ...string) Config {
 	prefix := strings.Join(prefixs, "_")
