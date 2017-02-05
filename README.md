@@ -24,6 +24,14 @@ go get -d github.com/adamryman/kit
     "database/sql.Open(driverName string, dataSourceName string)" where
     dataSourceName is the connection string
 ```
+### [`kit/file/line`](./file/line)
+
+[`https://godoc.org/github.com/adamryman/kit/file/line`](https://godoc.org/github.com/adamryman/kit/file/line)
+
+```
+    Package line has helper functions for manipulating new line separated
+    files
+```
 
 ## (UN)-LICENCE
 

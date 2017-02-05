@@ -11,7 +11,7 @@ import (
 	"github.com/pkg/errors"
 )
 
-// Delete removes one line from a file by path
+// Delete removes one line from a file by path and returns the line removed
 func Delete(path string, line int) error {
 	f, err := os.Open(path)
 	if err != nil {
