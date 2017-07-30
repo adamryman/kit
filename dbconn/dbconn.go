@@ -38,7 +38,7 @@ func FromENV(prefixs ...string) Config {
 // Used for database/sql.Open("mysql", Config.MySQL())
 func (cfg Config) MySQL() (conn string) {
 	return fmt.Sprintf("%s:%s@(%s:%s)/%s",
-		cfg.Database, cfg.Password, cfg.Host, cfg.Port, cfg.Database)
+		cfg.User, cfg.Password, cfg.Host, cfg.Port, cfg.Database)
 }
 
 // TODO: More ouputs
