@@ -21,8 +21,10 @@ before_install:
   #- jq --version
   #- go get github.com/alecthomas/gometalinter
   #- gometalinter -i -d
+  - go get github.com/golang/dep/...
 
 script:
+  - dep ensure
   - go build -v github.com/adamryman/kit/...
   #- gometalinter --enable-all --json $GOPATH/src/github.com/adamryman/kit/... | jq -C .
 
