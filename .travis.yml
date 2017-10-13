@@ -13,19 +13,18 @@ cache:
     $GOPATH/src
 
 go:
-  - tip
-  - 1.7.x
+  - 1.9.x
 
 go_import_path: github.com/adamryman/kit
 
 before_install:
-  - jq --version
-  - go get github.com/alecthomas/gometalinter
-  - gometalinter -i -d
+  #- jq --version
+  #- go get github.com/alecthomas/gometalinter
+  #- gometalinter -i -d
 
 script:
   - go build -v github.com/adamryman/kit/...
-  - gometalinter --enable-all --json $GOPATH/src/github.com/adamryman/kit/... | jq -C .
+  #- gometalinter --enable-all --json $GOPATH/src/github.com/adamryman/kit/... | jq -C .
 
 notifications:
   email: false
